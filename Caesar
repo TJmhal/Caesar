@@ -1,0 +1,7 @@
+orig = get.chop		#改行を省いた暗号化したい文字列
+code = ""
+coded = ""
+orig.each_char do |code|	#入力された文字列を1文字ずつ
+	coded.concat(code.succ)	#codedに暗号後文を破壊的に入れていく
+	end
+puts coded
