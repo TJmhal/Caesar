@@ -1,4 +1,4 @@
-orig = get.chop		#改行を省いた暗号化したい文字列
+orig = get.chomp		#改行を省いた暗号化したい文字列
 code = ""
 coded = ""
 orig.each_char do |code|	#入力された文字列を1文字ずつ
