@@ -1,7 +1,13 @@
 orig = get.chomp		#改行を省いた暗号化したい文字列
-code = ""
+code = ""						#初期化
 coded = ""
-orig.each_char do |code|	#入力された文字列を1文字ずつ
-	coded.concat(code.succ)	#codedに暗号後文を破壊的に入れていく
+
+orig.each_char do |code|									#1文字毎にcodeに入れる
+	if code.succ.length == 2								#もしaa等になるようなら
+		coded.concat(code.succ.reverse.chop)	#反対にして1文字消してからcodedに入れる
+	else
+		coded.concat(code.succ)								#そうでないなら通常通り行う
 	end
+end
+
 puts coded
